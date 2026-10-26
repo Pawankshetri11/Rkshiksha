@@ -1,0 +1,215 @@
+body.wp-admin {
+	background: #f7f8f3;
+	color: #26353b;
+}
+
+#wpadminbar {
+	background: #173f4b;
+}
+
+#adminmenuback,
+#adminmenuwrap,
+#adminmenu {
+	background: #173f4b;
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu,
+#adminmenu .wp-has-current-submenu.opensub .wp-submenu,
+#adminmenu .wp-submenu,
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu {
+	background: #102f39;
+}
+
+#adminmenu li.menu-top:hover,
+#adminmenu li.opensub > a.menu-top,
+#adminmenu li > a.menu-top:focus {
+	background: #225b69;
+	color: #fff;
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
+#adminmenu .wp-menu-arrow,
+#adminmenu .wp-menu-arrow div,
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu {
+	background: #e63946;
+}
+
+#adminmenu div.wp-menu-image:before,
+#adminmenu a,
+#adminmenu .wp-submenu a,
+#collapse-button {
+	color: rgba(255, 255, 255, 0.82);
+}
+
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+#adminmenu li.wp-has-current-submenu div.wp-menu-image:before {
+	color: #fff;
+}
+
+#adminmenu li.rks-wp-menu-separator {
+	height: 34px !important;
+	min-height: 34px !important;
+	margin: 8px 0 3px !important;
+	background: transparent !important;
+	cursor: default !important;
+	pointer-events: none !important;
+}
+
+#adminmenu li.rks-wp-menu-separator .separator {
+	position: relative;
+	height: 34px !important;
+	margin: 0 14px !important;
+	padding: 8px 0 0 !important;
+	background-color: transparent !important;
+	background-image:
+		linear-gradient(to right, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.16)),
+		linear-gradient(to right, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.16));
+	background-position: left 50%, right 50%;
+	background-repeat: no-repeat;
+	background-size: calc(50% - 34px) 1px, calc(50% - 34px) 1px;
+}
+
+#adminmenu li.rks-wp-menu-separator .separator::before {
+	position: absolute;
+	top: 8px;
+	left: 50%;
+	width: auto;
+	height: auto;
+	background: transparent;
+	content: "WordPress";
+	color: rgba(255, 255, 255, 0.58);
+	font-size: 10px;
+	font-weight: 800;
+	letter-spacing: 0;
+	line-height: 1.1;
+	text-transform: uppercase;
+	transform: translateX(-50%);
+	white-space: nowrap;
+}
+
+.folded #adminmenu li.rks-wp-menu-separator {
+	height: 12px !important;
+	min-height: 12px !important;
+	margin: 7px 10px 5px !important;
+	border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.folded #adminmenu li.rks-wp-menu-separator .separator {
+	display: none !important;
+}
+
+@media only screen and (max-width: 960px) {
+	.auto-fold #adminmenu li.rks-wp-menu-separator {
+		height: 12px !important;
+		min-height: 12px !important;
+		margin: 7px 10px 5px !important;
+		border-top: 1px solid rgba(255, 255, 255, 0.16);
+	}
+
+	.auto-fold #adminmenu li.rks-wp-menu-separator .separator {
+		display: none !important;
+	}
+}
+
+#wpcontent,
+#wpfooter {
+	background: #f7f8f3;
+}
+
+.wrap h1,
+.wrap h2,
+.wrap h3 {
+	color: #173f4b;
+}
+
+.wp-core-ui .button-primary {
+	background: #e63946;
+	border-color: #c92b37;
+	box-shadow: none;
+}
+
+.wp-core-ui .button-primary:hover,
+.wp-core-ui .button-primary:focus {
+	background: #c92b37;
+	border-color: #a8222d;
+}
+
+.postbox,
+.stuffbox,
+.welcome-panel,
+.card,
+.health-check-accordion,
+.notice {
+	border-radius: 8px;
+	border-color: #dfe8e5;
+	box-shadow: 0 2px 8px rgba(23, 63, 75, 0.05);
+}
+
+.postbox-header,
+.health-check-accordion-heading {
+	border-color: #e7eeec;
+}
+
+.widefat {
+	border-color: #dfe8e5;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.widefat thead th,
+.widefat thead td {
+	background: #fbf3e9;
+	color: #173f4b;
+	font-weight: 700;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+select,
+textarea {
+	border-color: #d7e2df;
+	border-radius: 6px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+	border-color: #2c687b;
+	box-shadow: 0 0 0 3px rgba(44, 104, 123, 0.14);
+}
+
+.rks-wp-dashboard-widget {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	gap: 10px;
+	margin-top: 8px;
+}
+
+.rks-wp-dashboard-widget a {
+	display: block;
+	padding: 12px;
+	border: 1px solid #dfe8e5;
+	border-radius: 8px;
+	background: #fff;
+	text-decoration: none;
+	color: #173f4b;
+	font-weight: 700;
+}
+
+.rks-wp-dashboard-widget a small {
+	display: block;
+	margin-top: 4px;
+	color: #61767d;
+	font-weight: 500;
+}

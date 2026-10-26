@@ -1,0 +1,40 @@
+@mixin ame-indeterminate-checkbox($markColor: var(--wp-admin-theme-color, #1e8cbe)) {
+	&:indeterminate {
+		//WP 7.0+ sets the checked-state background to the theme color, so we need to override
+		//that for the indeterminate state, to ensure the mark is visible.
+		background: #fff;
+
+		&:before {
+			$boxSize: (10/16) * 1rem;
+			$spacing: (2/16) * 1rem;
+
+			content: '';
+
+			display: block;
+			float: left;
+			margin: $spacing 0 0 $spacing;
+
+			width: $boxSize;
+			height: $boxSize;
+			line-height: $boxSize;
+			background: $markColor;
+		}
+	}
+
+	@media screen and (max-width: 782px) {
+		//The checkbox size increases to 1.5625rem (25px), with 23px left for the content.
+		//Scale up the indeterminate mark accordingly.
+		&:indeterminate:before {
+			$boxSize: (15/16) * 1rem;
+			$spacing: (4/16) * 1rem;
+
+			height: $boxSize;
+			width: $boxSize;
+			line-height: $boxSize;
+			margin: $spacing 0 0 $spacing;
+
+			font-family: unset;
+			font-weight: normal;
+		}
+	}
+}

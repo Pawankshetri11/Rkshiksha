@@ -1,0 +1,22 @@
+$buttonHeight: 32px; //Includes borders.
+$buttonBorderWidth: 1px;
+$buttonPaddingHorizontal: 10px;
+
+$buttonLineHeight: $buttonHeight - 2 * $buttonBorderWidth; //Subtract borders.
+
+@mixin ame-button-group-button {
+	box-sizing: border-box;
+	height: $buttonHeight;
+	min-height: $buttonHeight; //Override WP 7.0+ styles that set min-height to 40px.
+
+	padding: 0 $buttonPaddingHorizontal;
+	line-height: $buttonLineHeight;
+
+	user-select: none;
+	text-align: center;
+
+	//Vertically align Dashicons inside the button.
+	.dashicons {
+		line-height: $buttonLineHeight;
+	}
+}

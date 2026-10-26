@@ -1,0 +1,61 @@
+/************************************
+        Screen meta buttons
+            for WP 3.8+
+*************************************/
+
+/* All buttons */
+.custom-screen-meta-link-wrap {
+	box-sizing: border-box;
+	float: right;
+	min-height: 30px;
+	margin: 0 0 0 6px;
+
+	border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+#screen-meta .custom-screen-meta-link-wrap a.custom-screen-meta-link,
+#screen-meta-links .custom-screen-meta-link-wrap a.custom-screen-meta-link
+{
+	display: block;
+	box-sizing: border-box;
+
+	border: 1px solid #ccd0d4;
+	border-top: none;
+	border-radius: 0 0 4px 4px;
+
+	padding-left: 16px;
+	padding-right: 16px;
+	text-decoration: none;
+	box-shadow: none;
+}
+
+#screen-meta-links a.custom-screen-meta-link::after {
+    display: none;
+}
+
+/* "Upgrade to Pro" */
+#ws-pro-version-notice-link {
+	/*
+	Intentionally lower priority so as not to override the larger min-height that WP 7.0+ sets
+	for the screen options and help buttons. This way the stylesheet should be compatible with
+	both older and newer WP versions.
+	*/
+	min-height: 32px;
+	line-height: 30px;
+}
+
+#screen-meta-links #ws-pro-version-notice a.show-settings {
+    font-weight: bold;
+    color: #DEFFD8;
+    text-shadow: none;
+	box-shadow: none;
+	background-color: #00C31F;
+	border-color: #0a0;
+}
+
+#screen-meta-links  #ws-pro-version-notice a.show-settings:hover {
+    color: white;
+	background-color: #00B717;
+}

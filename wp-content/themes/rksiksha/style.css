@@ -1,0 +1,16 @@
+/*
+Theme Name: Rishikul Shiksha
+Theme URI: https://rishikulshiksha.com
+Author: Rishikul Shiksha
+Author URI: https://rishikulshiksha.com
+Description: Custom LMS theme for Rishikul Shiksha. Built from scratch with hand-coded header, footer, and landing page.
+Version: 0.1.0
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: rksiksha
+*/
+
+/* All real styles live in assets/css/main.css. This file only carries the theme header. */

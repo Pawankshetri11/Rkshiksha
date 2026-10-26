@@ -1,0 +1,6 @@
+# Local WordPress configuration and user-generated files
+/wp-config.php
+/wp-content/uploads/
+/wp-content/debug.log
+/wp-content/upgrade/
+/wp-content/upgrade-temp-backup/

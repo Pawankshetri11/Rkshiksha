@@ -1,0 +1,64 @@
+@use "wp-admin-colors";
+
+.ui-dialog {
+
+	//In WordPress the "Cancel" option is usually on the left side,
+	//but AME historically puts it on the right.
+	.ui-dialog-buttonpane {
+		background-color: #fcfcfc;
+		border-top: 1px solid wp-admin-colors.wpColor(gray-5);
+		padding: 8px;
+		text-align: right;
+
+		//Move the confirmation button to the left.
+		.button-primary, .ame-dialog-confirm-button {
+			float: left;
+		}
+	}
+}
+
+// Big jQuery dialog that's responsive to screen size.
+//
+// This mixin should be applied to the root element of a jQuery dialog, typically by using
+// a custom class. It ensures the dialog takes up most of the screen without overlapping
+// the Toolbar or the admin menu.
+@mixin ame-responsive-mega-dialog($maxWidth: 825px, $screenEdgeOffset: 30px, $elementOffset: 10px) {
+	//The left edge of the dialog should be at least $elementOffset pixels away from
+	//the admin menu.
+	--menu-based-offset: calc(var(--ame-ms-menu-width, 160px) + #{$elementOffset});
+	//The right edge should be at at least $screenEdgeOffset pixels away from the right edge
+	//of the screen. Given the minimum left and right offsets, we can calculate how much
+	//horizontal space is available for the dialog.
+	--available-width: calc(100vw - var(--menu-based-offset) - #{$screenEdgeOffset});
+	//For readability, the dialog width should not exceed $maxWidth.
+	--dialog-width: max(min(var(--available-width), #{$maxWidth}), 200px);
+	//If the screen is large enough, center the dialog instead of aligning it to the menu.
+	--centering-based-offset: calc((100vw - var(--dialog-width)) / 2);
+
+	//The final offset is the maximum of the two (centered or aligned to the menu).
+	//Fall back to 0px in case we end up with negative offsets on small screens.
+	--dialog-left: max(var(--centering-based-offset), var(--menu-based-offset), 0px);
+
+	position: fixed !important;
+
+	bottom: $screenEdgeOffset !important;
+	//Show below the Admin Bar.
+	top: calc(var(--wp-admin--admin-bar--height, 32px) + $elementOffset) !important;
+
+	left: var(--dialog-left) !important;
+	width: var(--dialog-width) !important;
+	height: auto !important;
+
+	display: flex;
+	flex-direction: column;
+
+	.ui-dialog-titlebar {
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+
+	.ui-dialog-content {
+		flex-grow: 1;
+		flex-shrink: 1;
+	}
+}

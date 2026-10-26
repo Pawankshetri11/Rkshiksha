@@ -1,0 +1,63 @@
+@use "../../css/ui-constants";
+@use "../../css/wp-admin-colors";
+
+.ame-radio-card-group-control {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(var(--ame-rcg-min-item-width, 190px), 1fr));
+	grid-gap: 0.5rem;
+	width: 100%;
+}
+
+.ame-radio-card, .form-table td fieldset label.ame-radio-card {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	gap: 0.75rem;
+
+	padding: 0.75rem;
+	margin: 0;
+
+	border: 1px solid wp-admin-colors.wpColor(gray-5);
+	border-radius: 4px;
+	background: wp-admin-colors.wpColor(white);
+
+	cursor: pointer;
+	transition: none;
+
+	&:hover {
+		border-color: wp-admin-colors.wpColor(gray-10);
+	}
+
+	&:has(>.ame-radio-card-input-wrapper input[type=radio]:checked) {
+		border-color: wp-admin-colors.wpColor(blue-40);
+		outline: 1px solid wp-admin-colors.wpColor(blue-40);
+		outline-offset: 0;
+	}
+}
+
+.ame-radio-card-group-control label.ame-radio-card {
+	//Override the important margin from the WP label styles.
+	margin: 0 !important;
+}
+
+.ame-radio-card-input-wrapper {
+	flex: 0 0 auto;
+}
+
+.ame-radio-card-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	//Prevent it from overflowing the parent if the card has wide children.
+	//See https://stackoverflow.com/questions/43809612/prevent-a-child-element-from-overflowing-its-parent-in-flexbox
+	min-width: 10px;
+}
+
+.ame-radio-card-children {
+
+}
+
+.ame-radio-card-label {
+	color: ui-constants.$ameUiTextMutedColor;
+}
